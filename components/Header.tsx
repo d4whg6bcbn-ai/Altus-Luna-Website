@@ -11,19 +11,16 @@ export function Header() {
   return (
     <header className="sticky top-0 z-30 border-b border-white/10 bg-[#111312]/92 text-[#f4f1ea] backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-5 px-5 py-3.5 sm:px-8 lg:px-12">
-        <a href="#" className="group flex items-center gap-3">
-          <span className="relative block h-11 w-40 overflow-hidden rounded-full border border-white/10 bg-black shadow-[0_10px_30px_rgba(0,0,0,0.18)] sm:w-48">
+        <a href="#" className="group flex items-center">
+          <span className="relative block h-14 w-48 overflow-hidden rounded-full border border-white/10 bg-black shadow-[0_10px_30px_rgba(0,0,0,0.18)] sm:h-16 sm:w-60">
             <Image
               src="/images/logo-horizontal.svg"
               alt="Altus Luna"
               fill
               priority
-              sizes="(min-width: 640px) 192px, 160px"
-              className="scale-[2.6] object-contain px-4 py-2"
+              sizes="(min-width: 640px) 240px, 192px"
+              className="scale-[2.8] object-contain px-4 py-2"
             />
-          </span>
-          <span className="hidden text-xs text-[#b9b8b2] sm:block">
-            Cinematic visual content
           </span>
         </a>
 
