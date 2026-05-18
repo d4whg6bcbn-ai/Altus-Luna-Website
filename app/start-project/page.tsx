@@ -51,17 +51,13 @@ export default function StartProjectPage() {
                 <form
                   name="start-project"
                   method="POST"
-                  action="/thank-you"
                   data-netlify="true"
                   netlify-honeypot="bot-field"
+                  action="/thank-you"
                   className="space-y-5"
                 >
                   <input type="hidden" name="form-name" value="start-project" />
-                  <p className="hidden">
-                    <label>
-                      Don&apos;t fill this out: <input name="bot-field" />
-                    </label>
-                  </p>
+                  <input type="hidden" name="bot-field" />
 
                   <div className="grid gap-5 sm:grid-cols-2">
                     <label className="block">
@@ -83,7 +79,7 @@ export default function StartProjectPage() {
                       </span>
                       <input
                         type="text"
-                        name="business-name"
+                        name="business"
                         className="w-full rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3 text-sm text-white outline-none placeholder:text-[#9da3a9] focus:border-[#c8c2b4]"
                         placeholder="Your business"
                       />
@@ -110,7 +106,7 @@ export default function StartProjectPage() {
                       </span>
                       <input
                         type="text"
-                        name="phone-or-whatsapp"
+                        name="phone"
                         className="w-full rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3 text-sm text-white outline-none placeholder:text-[#9da3a9] focus:border-[#c8c2b4]"
                         placeholder="+357..."
                       />
@@ -122,7 +118,7 @@ export default function StartProjectPage() {
                       Service needed
                     </span>
                     <select
-                      name="service-needed"
+                      name="service"
                       required
                       defaultValue=""
                       className="w-full rounded-2xl border border-white/12 bg-[#1d211f] px-4 py-3 text-sm text-white outline-none focus:border-[#c8c2b4]"
@@ -143,7 +139,7 @@ export default function StartProjectPage() {
                       Preferred contact method
                     </span>
                     <select
-                      name="preferred-contact-method"
+                      name="contactMethod"
                       required
                       defaultValue=""
                       className="w-full rounded-2xl border border-white/12 bg-[#1d211f] px-4 py-3 text-sm text-white outline-none focus:border-[#c8c2b4]"
@@ -164,7 +160,7 @@ export default function StartProjectPage() {
                       Project details / message
                     </span>
                     <textarea
-                      name="project-details"
+                      name="message"
                       required
                       rows={6}
                       className="w-full rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3 text-sm text-white outline-none placeholder:text-[#9da3a9] focus:border-[#c8c2b4]"
