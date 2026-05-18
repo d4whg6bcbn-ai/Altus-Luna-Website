@@ -7,7 +7,7 @@ import { ServicesSection } from "@/components/ServicesSection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#fbfaf7] text-[#27231f]">
+    <div className="min-h-screen bg-[#f4f1ea] text-[#161817]">
       <Header />
       <main>
         <Hero />
@@ -16,31 +16,32 @@ export default function Home() {
         <section
           id="about"
           aria-labelledby="about-heading"
-          className="bg-[#f1f5f0] px-5 py-20 sm:px-8 lg:px-12"
+          className="bg-[#eef1f5] px-5 py-20 sm:px-8 lg:px-12"
         >
           <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.22em] text-[#62745d]">
+              <p className="text-sm font-medium uppercase tracking-[0.22em] text-[#4f5964]">
                 About Altus Luna
               </p>
               <h2
                 id="about-heading"
-                className="mt-4 max-w-xl text-3xl font-semibold tracking-tight text-[#27231f] sm:text-4xl"
+                className="mt-4 max-w-xl text-3xl font-semibold text-[#161817] sm:text-4xl"
               >
-                Creative support for brands that need polish without losing
-                their human edge.
+                Hands-on creative support for businesses that need stronger
+                visuals without the inflated agency feeling.
               </h2>
             </div>
-            <div className="space-y-5 text-base leading-8 text-[#5f5a53] sm:text-lg">
+            <div className="space-y-5 text-base leading-8 text-[#5d5b55] sm:text-lg">
               <p>
-                Altus Luna is built for practical creative work: the website
-                that makes a company easier to trust, the reel that helps a
-                property feel real, and the message that starts a better client
-                conversation.
+                Altus Luna is built for practical visual work: the aerial shot
+                that shows scale, the edit that makes a business feel active,
+                the website that explains the offer, and the content that keeps
+                a brand present online.
               </p>
               <p>
                 The style is calm, considered, and local-first, with room for
-                the warmth of Cyprus businesses, homes, people, and places.
+                the warmth of Cyprus places, people, properties, services, and
+                small business stories.
               </p>
             </div>
           </div>

@@ -2,40 +2,33 @@ import { ServiceCard } from "./ServiceCard";
 
 const services = [
   {
-    title: "Website builds",
+    label: "Air",
+    title: "Drone shooting / aerial filming",
     description:
-      "Clean, responsive websites for property teams, consultants, hospitality brands, and owner-led businesses.",
-    details: "Structure, copy direction, page design, launch-ready build",
+      "Smooth aerial footage for properties, projects, venues, outdoor work, and businesses that need scale and context.",
+    details:
+      "Planning, drone capture, smooth movement, location-focused shots",
   },
   {
-    title: "Real estate video reels",
+    label: "Cut",
+    title: "Video editing",
     description:
-      "Short-form property edits that make homes, views, and neighbourhood details feel tangible.",
-    details: "Shot planning, edit pacing, captions, delivery formats",
+      "Clean, polished edits that turn raw footage into clear stories for websites, reels, listings, and campaigns.",
+    details: "Reels, project highlights, captions, pacing, delivery formats",
   },
   {
-    title: "Instagram content",
+    label: "Web",
+    title: "Web design / website builds",
     description:
-      "A calmer content rhythm for brands that need to stay visible without sounding manufactured.",
-    details: "Reels, carousels, post ideas, visual direction",
+      "Light, modern websites for local businesses, property teams, service brands, and owner-led companies.",
+    details: "Page structure, copy direction, responsive design, launch-ready build",
   },
   {
-    title: "Client outreach",
+    label: "Post",
+    title: "Social media content",
     description:
-      "Simple, human messaging for first contact, follow-ups, and relationship-building campaigns.",
-    details: "Email copy, DM structure, offer clarity, response flow",
-  },
-  {
-    title: "Brand strategy",
-    description:
-      "Positioning, tone, and offer refinement so every touchpoint feels coherent and credible.",
-    details: "Messaging, audience fit, visual mood, service packaging",
-  },
-  {
-    title: "PV proposal emails",
-    description:
-      "Clear proposal communication for solar and property-adjacent services where trust matters early.",
-    details: "Proposal narrative, subject lines, follow-up sequences",
+      "Practical visual content for brands that want to stay visible without posting for the sake of it.",
+    details: "Short-form videos, post ideas, simple content rhythm, platform-ready assets",
   },
 ];
 
@@ -44,29 +37,30 @@ export function ServicesSection() {
     <section
       id="services"
       aria-labelledby="services-heading"
-      className="px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+      className="relative overflow-hidden bg-[#f4f1ea] px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
     >
+      <div className="absolute inset-x-0 top-0 h-32 bg-[linear-gradient(180deg,#101211_0%,rgba(16,18,17,0)_100%)] opacity-10" />
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.22em] text-[#62745d]">
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-[#4f5964]">
               Services
             </p>
             <h2
               id="services-heading"
-              className="mt-4 text-3xl font-semibold tracking-tight text-[#27231f] sm:text-4xl"
+              className="mt-4 text-3xl font-semibold text-[#161817] sm:text-4xl"
             >
-              The useful creative pieces, brought into one steady system.
+              A connected production toolkit for sharper online presence.
             </h2>
           </div>
-          <p className="max-w-2xl text-base leading-8 text-[#5f5a53] sm:text-lg">
-            Altus Luna works across the practical moments where a business
-            needs to look ready: before a property goes live, before a founder
-            starts outreach, or before a brand asks people to trust it.
+          <p className="max-w-2xl text-base leading-8 text-[#5d5b55] sm:text-lg">
+            Altus Luna helps businesses capture what they do, shape it into
+            useful content, and present it through websites and social channels
+            that feel cinematic, credible, and human.
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
             <ServiceCard key={service.title} {...service} />
           ))}

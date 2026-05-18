@@ -6,11 +6,11 @@ This is the Altus Luna website, built with Next.js, TypeScript, Tailwind CSS, an
 ## Brand direction
 Altus Luna is a premium but approachable creative/media brand for:
 - website builds
-- real estate video reels
-- client outreach
-- Instagram content
-- brand strategy
-- PV proposal emails
+- drone shooting / aerial filming
+- video editing
+- social media content creation
+- visual content for garden companies and landscaping businesses
+- real estate, property, and small local business websites
 
 The website should feel:
 - premium

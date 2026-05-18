@@ -2,31 +2,30 @@ import Image from "next/image";
 
 const workFormats = [
   {
-    title: "Property launch kit",
-    category: "Real estate media",
+    title: "Aerial project showcase",
+    category: "Drone and edit package",
     description:
-      "Listing page direction, vertical reel edits, captions, and outreach copy for a clearer launch.",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
-    alt: "Bright Mediterranean villa terrace with pool and sea-facing outdoor area",
+      "Aerial shots, detail footage, and a clean short edit that shows the scale, setting, and finish of real work.",
+    image: "/images/Drone in Nature - Mountains & Sea.png",
+    alt: "Aerial view of sea and mountains captured by drone",
   },
   {
-    title: "Founder website refresh",
-    category: "Website and brand",
+    title: "Local business website",
+    category: "Web design",
     description:
-      "A simple site structure, stronger service story, and a lighter visual system for trust.",
+      "A clear site structure, natural copy, and a warm visual system that helps visitors understand the service quickly.",
     image:
       "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85",
     alt: "Warm modern workspace with desks, plants, and natural light",
   },
   {
-    title: "Social content rhythm",
-    category: "Instagram support",
+    title: "Property content set",
+    category: "Real estate support",
     description:
-      "Weekly reel and carousel concepts built around places, people, proof, and practical value.",
+      "Short-form video, simple post assets, and website-ready visuals for agents, property teams, and place-based brands.",
     image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85",
-    alt: "Small creative team reviewing content together in a bright setting",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1200&q=85",
+    alt: "Bright Mediterranean villa terrace with pool and outdoor landscaping",
   },
 ];
 
@@ -35,22 +34,23 @@ export function PortfolioPreview() {
     <section
       id="work"
       aria-labelledby="work-heading"
-      className="bg-white px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+      className="border-y border-[#d8d2c4] bg-[#fbfaf7] px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
     >
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.22em] text-[#62745d]">
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-[#4f5964]">
               Work preview
             </p>
             <h2
               id="work-heading"
-              className="mt-4 max-w-2xl text-3xl font-semibold tracking-tight text-[#27231f] sm:text-4xl"
+              className="mt-4 max-w-2xl text-3xl font-semibold text-[#161817] sm:text-4xl"
             >
-              Formats built for launches, listings, and practical brand growth.
+              Formats built for properties, service businesses, and practical
+              online visibility.
             </h2>
           </div>
-          <p className="max-w-md text-base leading-7 text-[#665f56]">
+          <p className="max-w-md text-base leading-7 text-[#5d5b55]">
             A first portfolio can stay honest: these are the kinds of assets
             Altus Luna is designed to create, not inflated case studies.
           </p>
@@ -60,7 +60,7 @@ export function PortfolioPreview() {
           {workFormats.map((item) => (
             <article
               key={item.title}
-              className="overflow-hidden rounded-lg border border-[#e6ded2] bg-[#fbfaf7]"
+              className="overflow-hidden rounded-xl border border-[#d8d2c4] bg-white shadow-[0_20px_60px_rgba(17,19,18,0.07)]"
             >
               <div className="relative aspect-[4/3]">
                 <Image
@@ -72,13 +72,13 @@ export function PortfolioPreview() {
                 />
               </div>
               <div className="p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#62745d]">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#4f5964]">
                   {item.category}
                 </p>
-                <h3 className="mt-3 text-xl font-semibold tracking-tight text-[#27231f]">
+                <h3 className="mt-3 text-xl font-semibold text-[#161817]">
                   {item.title}
                 </h3>
-                <p className="mt-4 text-base leading-7 text-[#665f56]">
+                <p className="mt-4 text-base leading-7 text-[#5d5b55]">
                   {item.description}
                 </p>
               </div>

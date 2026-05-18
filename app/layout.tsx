@@ -14,11 +14,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Altus Luna | Websites, Reels & Brand Support in Cyprus",
+    default: "Altus Luna | Drone Video, Editing & Websites in Cyprus",
     template: "%s | Altus Luna",
   },
   description:
-    "Premium, warm creative support for Cyprus real estate, small businesses, websites, social reels, outreach, and brand strategy.",
+    "Premium cinematic drone shooting, aerial filming, video editing, social media content, and website builds for local businesses, property professionals, service brands, and small businesses.",
+  icons: {
+    icon: "/images/logo-icon.svg",
+    shortcut: "/images/logo-icon.svg",
+    apple: "/images/logo-icon.svg",
+  },
 };
 
 export default function RootLayout({

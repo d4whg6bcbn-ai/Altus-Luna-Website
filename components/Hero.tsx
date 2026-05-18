@@ -1,66 +1,69 @@
 import Image from "next/image";
 
+const stats = [
+  ["Drone", "Aerial filming with scale and atmosphere"],
+  ["Edit", "Polished cuts for web, reels, and launch assets"],
+  ["Web", "Clean websites and social-ready visual systems"],
+];
+
 export function Hero() {
   return (
     <section
       id="home"
       aria-labelledby="hero-heading"
-      className="relative isolate min-h-[78svh] overflow-hidden"
+      className="relative isolate overflow-hidden bg-[#101211] text-[#f4f1ea]"
     >
       <Image
-        src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2200&q=85"
-        alt="Sunlit modern Mediterranean home exterior with warm stone and glass"
+        src="/images/altus-luna-hero-bg.png"
+        alt="Moonlit city skyline with a drone silhouette"
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className="absolute inset-0 -z-20 object-cover object-center"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(251,250,247,0.96)_0%,rgba(251,250,247,0.82)_42%,rgba(251,250,247,0.32)_100%)]" />
+      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(8,10,10,0.94)_0%,rgba(8,10,10,0.78)_48%,rgba(8,10,10,0.42)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-52 bg-[linear-gradient(0deg,#101211_0%,rgba(16,18,17,0)_100%)]" />
+      <div className="absolute left-6 top-32 hidden h-28 w-28 rounded-full border border-white/10 lg:block" />
 
-      <div className="relative mx-auto flex min-h-[78svh] max-w-6xl items-center px-5 py-20 sm:px-8 lg:px-12">
+      <div className="mx-auto flex min-h-[82svh] max-w-6xl items-center px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.24em] text-[#62745d]">
-            Cyprus creative media studio
+          <p className="text-sm font-medium uppercase tracking-[0.26em] text-[#c8c2b4]">
+            Altus Luna creative media
           </p>
           <h1
             id="hero-heading"
-            className="mt-6 max-w-3xl text-5xl font-semibold leading-[1.02] tracking-tight text-[#27231f] sm:text-6xl lg:text-7xl"
+            className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.06] text-white sm:text-5xl lg:text-6xl"
           >
-            Websites, reels, and brand support for businesses that need to feel
-            trusted.
+            Cinematic visuals for brands ready to be seen with more depth.
           </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#5f5a53] sm:text-xl sm:leading-9">
-            Altus Luna helps Cyprus real estate teams, founders, and local
-            service brands show up with clear websites, warm property content,
-            thoughtful outreach, and social assets that feel considered.
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#d8d2c4] sm:text-xl sm:leading-9">
+            Drone shooting, aerial filming, video editing, website builds, and
+            social content for local businesses, property professionals, service
+            brands, and teams that need stronger online presence.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <a
               href="#services"
-              className="inline-flex items-center justify-center rounded-full bg-[#28352d] px-6 py-4 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-[#3c4d41]"
+              className="inline-flex items-center justify-center rounded-full bg-[#f4f1ea] px-6 py-4 text-sm font-semibold text-[#111312] shadow-[0_16px_40px_rgba(0,0,0,0.28)] transition-colors hover:bg-white"
             >
               Explore services
             </a>
             <a
-              href="mailto:hello@altusluna.com"
-              className="inline-flex items-center justify-center rounded-full border border-[#c8b99f] bg-white/75 px-6 py-4 text-sm font-semibold text-[#27231f] shadow-sm transition-colors hover:bg-white"
+              href="mailto:pawel@altusluna.com"
+              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/8 px-6 py-4 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/14"
             >
               Plan a project
             </a>
           </div>
 
-          <dl className="mt-12 grid max-w-2xl gap-5 border-t border-[#d9cfbf] pt-7 sm:grid-cols-3">
-            {[
-              ["Focus", "Real estate, small business, brand launches"],
-              ["Tone", "Premium, warm, practical"],
-              ["Outputs", "Web, reels, outreach, social"],
-            ].map(([term, detail]) => (
+          <dl className="mt-12 grid max-w-2xl gap-5 border-t border-white/14 pt-7 sm:grid-cols-3">
+            {stats.map(([term, detail]) => (
               <div key={term}>
-                <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-[#62745d]">
+                <dt className="text-xs font-semibold uppercase tracking-[0.22em] text-[#c8c2b4]">
                   {term}
                 </dt>
-                <dd className="mt-2 text-sm leading-6 text-[#5f5a53]">
+                <dd className="mt-2 text-sm leading-6 text-[#d8d2c4]">
                   {detail}
                 </dd>
               </div>
