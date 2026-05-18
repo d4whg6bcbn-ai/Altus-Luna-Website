@@ -18,17 +18,32 @@ export const metadata: Metadata = {
     template: "%s | Altus Luna",
   },
   description:
-    "Premium cinematic drone shooting, aerial filming, video editing, social media content, and website builds for local businesses, property professionals, service brands, and small businesses.",
+    "Premium cinematic drone shooting, aerial filming, video editing, web design and social-ready content for businesses in Cyprus.",
   icons: {
     icon: "/favicon.ico?v=3",
     shortcut: "/favicon.ico?v=3",
     apple: "/images/favicon.png?v=3",
   },
   openGraph: {
-    images: ["/images/favicon.png?v=3"],
+    title: "Altus Luna | Drone Video, Editing & Websites in Cyprus",
+    description:
+      "Premium cinematic drone shooting, aerial filming, video editing, web design and social-ready content for businesses in Cyprus.",
+    url: "https://altusluna.com",
+    siteName: "Altus Luna",
+    images: [
+      {
+        url: "/images/altus-luna-og-image.png",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "website",
   },
   twitter: {
-    images: ["/images/favicon.png?v=3"],
+    title: "Altus Luna | Drone Video, Editing & Websites in Cyprus",
+    description:
+      "Premium cinematic drone shooting, aerial filming, video editing, web design and social-ready content for businesses in Cyprus.",
+    images: ["/images/altus-luna-og-image.png"],
   },
 };
 
