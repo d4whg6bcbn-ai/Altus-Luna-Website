@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import type { FormEvent } from "react";
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -11,9 +14,32 @@ const serviceOptions = [
   "Not sure yet / need advice",
 ];
 
-const contactMethods = ["Email", "Phone call", "WhatsApp"];
+const contactMethods = ["Email", "Phone", "WhatsApp"];
+
+function encodeForm(formData: FormData) {
+  return new URLSearchParams(
+    Array.from(formData.entries()).map(([key, value]) => [key, String(value)]),
+  ).toString();
+}
 
 export default function StartProjectPage() {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const response = await fetch("/__forms.html", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: encodeForm(formData),
+    });
+
+    if (response.ok) {
+      window.location.href = "/thank-you";
+    }
+  }
+
   return (
     <div className="min-h-screen bg-[#f4f1ea] text-[#161817]">
       <Header />
@@ -51,9 +77,10 @@ export default function StartProjectPage() {
                 <form
                   name="start-project"
                   method="POST"
+                  action="/__forms.html"
                   data-netlify="true"
                   netlify-honeypot="bot-field"
-                  action="/thank-you"
+                  onSubmit={handleSubmit}
                   className="space-y-5"
                 >
                   <input type="hidden" name="form-name" value="start-project" />
@@ -114,9 +141,9 @@ export default function StartProjectPage() {
                   </div>
 
                   <label className="block">
-                    <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
-                      Service needed
-                    </span>
+                      <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
+                        Service needed
+                      </span>
                     <select
                       name="service"
                       required
@@ -135,9 +162,9 @@ export default function StartProjectPage() {
                   </label>
 
                   <label className="block">
-                    <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
-                      Preferred contact method
-                    </span>
+                      <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
+                        Preferred contact method
+                      </span>
                     <select
                       name="contactMethod"
                       required
