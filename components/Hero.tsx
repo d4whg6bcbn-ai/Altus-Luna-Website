@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const stats = [
   ["Drone", "Aerial filming with scale and atmosphere"],
@@ -49,12 +50,12 @@ export function Hero() {
             >
               Explore services
             </a>
-            <a
-              href="mailto:pawel@altusluna.com"
+            <Link
+              href="/start-project"
               className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/8 px-6 py-4 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/14"
             >
               Plan a project
-            </a>
+            </Link>
           </div>
 
           <dl className="mt-12 grid max-w-2xl gap-5 border-t border-white/14 pt-7 sm:grid-cols-3">

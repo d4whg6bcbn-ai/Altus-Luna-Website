@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://altusluna.com"),
   title: {
     default: "Altus Luna | Drone Video, Editing & Websites in Cyprus",
     template: "%s | Altus Luna",

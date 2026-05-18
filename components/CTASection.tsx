@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function CTASection() {
   return (
     <section
@@ -38,6 +40,12 @@ export function CTASection() {
             Luna can help turn the work you already do into clear visuals and a
             stronger web presence.
           </p>
+          <Link
+            href="/start-project"
+            className="mt-7 inline-flex items-center justify-center rounded-full bg-[#f4f1ea] px-6 py-4 text-sm font-semibold text-[#111312] shadow-sm transition-colors hover:bg-white"
+          >
+            Start your project form
+          </Link>
           <div className="mt-7 space-y-3 text-sm text-[#f4f1ea]">
             <a
               href="mailto:pawel@altusluna.com"
