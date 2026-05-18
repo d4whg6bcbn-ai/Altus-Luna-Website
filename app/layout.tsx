@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   description:
     "Premium cinematic drone shooting, aerial filming, video editing, social media content, and website builds for local businesses, property professionals, service brands, and small businesses.",
   icons: {
-    icon: "/images/logo-icon.svg",
-    shortcut: "/images/logo-icon.svg",
-    apple: "/images/logo-icon.svg",
+    icon: "/images/favicon.png?v=2",
+    shortcut: "/images/favicon.png?v=2",
+    apple: "/images/favicon.png?v=2",
   },
 };
 
