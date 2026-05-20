@@ -24,7 +24,6 @@ export function Hero() {
       />
       <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(8,10,10,0.94)_0%,rgba(8,10,10,0.78)_48%,rgba(8,10,10,0.42)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 -z-10 h-52 bg-[linear-gradient(0deg,#101211_0%,rgba(16,18,17,0)_100%)]" />
-      <div className="absolute left-6 top-32 hidden h-28 w-28 rounded-full border border-white/10 lg:block" />
 
       <div className="mx-auto flex min-h-[82svh] max-w-6xl items-center px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="max-w-3xl">

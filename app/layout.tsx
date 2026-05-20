@@ -21,9 +21,12 @@ export const metadata: Metadata = {
   description:
     "Premium cinematic drone shooting, aerial filming, video editing, web design and social-ready content for businesses in Cyprus.",
   icons: {
-    icon: "/favicon.ico?v=3",
-    shortcut: "/favicon.ico?v=3",
-    apple: "/images/favicon.png?v=3",
+    icon: [
+      { url: "/favicon.png?v=5", sizes: "512x512", type: "image/png" },
+      { url: "/favicon.ico?v=5", sizes: "32x32", type: "image/x-icon" },
+    ],
+    shortcut: "/favicon.png?v=5",
+    apple: "/favicon.png?v=5",
   },
   openGraph: {
     title: "Altus Luna | Drone Video, Editing & Websites in Cyprus",

@@ -13,7 +13,7 @@ export function Header() {
     <header className="sticky top-0 z-30 border-b border-white/10 bg-[#111312]/92 text-[#f4f1ea] backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-5 px-5 py-3.5 sm:px-8 lg:px-12">
         <Link href="/" className="group flex items-center">
-          <span className="relative block h-14 w-48 overflow-hidden rounded-full border border-white/10 bg-black shadow-[0_10px_30px_rgba(0,0,0,0.18)] sm:h-16 sm:w-60">
+          <span className="relative block h-14 w-48 overflow-hidden rounded-full bg-[#101211] shadow-[0_10px_30px_rgba(0,0,0,0.16)] sm:h-16 sm:w-60">
             <Image
               src="/images/logo-horizontal.svg"
               alt="Altus Luna"
