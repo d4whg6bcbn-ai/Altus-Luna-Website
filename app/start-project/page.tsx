@@ -5,16 +5,7 @@ import type { FormEvent } from "react";
 
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-
-const serviceOptions = [
-  "Drone shooting / aerial filming",
-  "Video editing",
-  "Web design / website build",
-  "Social media content creation",
-  "Not sure yet / need advice",
-];
-
-const contactMethods = ["Email", "Phone", "WhatsApp"];
+import { getHomeHref, siteContent, type SiteContent } from "@/lib/content";
 
 function encodeForm(formData: FormData) {
   return new URLSearchParams(
@@ -23,6 +14,12 @@ function encodeForm(formData: FormData) {
 }
 
 export default function StartProjectPage() {
+  const content = siteContent.en;
+
+  return <StartProjectContent content={content} />;
+}
+
+export function StartProjectContent({ content }: { content: SiteContent }) {
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -36,40 +33,44 @@ export default function StartProjectPage() {
     });
 
     if (response.ok) {
-      window.location.href = "/thank-you";
+      window.location.href =
+        content.language === "gr" ? "/gr/thank-you" : "/thank-you";
     }
   }
 
   return (
     <div className="min-h-screen bg-[#f4f1ea] text-[#161817]">
-      <Header />
+      <Header
+        content={content}
+        alternateHref={
+          content.language === "gr" ? "/start-project" : "/gr/start-project"
+        }
+      />
       <main className="bg-[linear-gradient(180deg,#101211_0%,#1b1f1d_24%,#f4f1ea_24%,#f4f1ea_100%)] px-5 pb-20 pt-12 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-6xl">
           <section className="rounded-[1.75rem] border border-white/10 bg-[#151817] px-6 py-10 text-[#f4f1ea] shadow-[0_28px_90px_rgba(17,19,18,0.22)] sm:px-8 sm:py-12 lg:px-12">
             <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr]">
               <div>
                 <p className="text-sm font-medium uppercase tracking-[0.22em] text-[#c8c2b4]">
-                  Start a project
+                  {content.form.eyebrow}
                 </p>
                 <h1 className="mt-4 max-w-xl text-4xl font-semibold text-white sm:text-5xl">
-                  Tell me what you need and I&apos;ll get back to you shortly.
+                  {content.form.title}
                 </h1>
                 <p className="mt-6 max-w-lg text-base leading-8 text-[#d8d2c4] sm:text-lg">
-                  This form is the quickest way to share your business, the
-                  kind of work you need, and how you&apos;d prefer to be
-                  contacted.
+                  {content.form.description}
                 </p>
                 <div className="mt-8 space-y-4 text-sm text-[#d8d2c4]">
-                  <p>Based in Cyprus, working across drone, edit, web, and social content.</p>
-                  <p>Email: pawel@altusluna.com</p>
-                  <p>Phone / WhatsApp: +35797942264</p>
+                  <p>{content.form.location}</p>
+                  <p>{content.form.email}</p>
+                  <p>{content.form.phone}</p>
                 </div>
               </div>
 
               <div className="relative rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 sm:p-7">
                 <Link
-                  href="/"
-                  aria-label="Close form"
+                  href={getHomeHref(content.language)}
+                  aria-label={content.form.closeAriaLabel}
                   className="absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-lg text-[#f4f1ea] transition-colors hover:bg-white/[0.12]"
                 >
                   X
@@ -89,26 +90,26 @@ export default function StartProjectPage() {
                   <div className="grid gap-5 sm:grid-cols-2">
                     <label className="block">
                       <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
-                        Name
+                        {content.form.fields.name}
                       </span>
                       <input
                         type="text"
                         name="name"
                         required
                         className="w-full rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3 text-sm text-white outline-none placeholder:text-[#9da3a9] focus:border-[#c8c2b4]"
-                        placeholder="Your name"
+                        placeholder={content.form.placeholders.name}
                       />
                     </label>
 
                     <label className="block">
                       <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
-                        Business name
+                        {content.form.fields.business}
                       </span>
                       <input
                         type="text"
                         name="business"
                         className="w-full rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3 text-sm text-white outline-none placeholder:text-[#9da3a9] focus:border-[#c8c2b4]"
-                        placeholder="Your business"
+                        placeholder={content.form.placeholders.business}
                       />
                     </label>
                   </div>
@@ -116,34 +117,34 @@ export default function StartProjectPage() {
                   <div className="grid gap-5 sm:grid-cols-2">
                     <label className="block">
                       <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
-                        Email
+                        {content.form.fields.email}
                       </span>
                       <input
                         type="email"
                         name="email"
                         required
                         className="w-full rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3 text-sm text-white outline-none placeholder:text-[#9da3a9] focus:border-[#c8c2b4]"
-                        placeholder="you@example.com"
+                        placeholder={content.form.placeholders.email}
                       />
                     </label>
 
                     <label className="block">
                       <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
-                        Phone or WhatsApp number
+                        {content.form.fields.phone}
                       </span>
                       <input
                         type="text"
                         name="phone"
                         className="w-full rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3 text-sm text-white outline-none placeholder:text-[#9da3a9] focus:border-[#c8c2b4]"
-                        placeholder="+357..."
+                        placeholder={content.form.placeholders.phone}
                       />
                     </label>
                   </div>
 
                   <label className="block">
-                      <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
-                        Service needed
-                      </span>
+                    <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
+                      {content.form.fields.service}
+                    </span>
                     <select
                       name="service"
                       required
@@ -151,30 +152,9 @@ export default function StartProjectPage() {
                       className="w-full rounded-2xl border border-white/12 bg-[#1d211f] px-4 py-3 text-sm text-white outline-none focus:border-[#c8c2b4]"
                     >
                       <option value="" disabled>
-                        Select a service
+                        {content.form.placeholders.service}
                       </option>
-                      {serviceOptions.map((option) => (
-                        <option key={option} value={option}>
-                          {option}
-                        </option>
-                      ))}
-                    </select>
-                  </label>
-
-                  <label className="block">
-                      <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
-                        Preferred contact method
-                      </span>
-                    <select
-                      name="contactMethod"
-                      required
-                      defaultValue=""
-                      className="w-full rounded-2xl border border-white/12 bg-[#1d211f] px-4 py-3 text-sm text-white outline-none focus:border-[#c8c2b4]"
-                    >
-                      <option value="" disabled>
-                        Choose contact method
-                      </option>
-                      {contactMethods.map((option) => (
+                      {content.form.serviceOptions.map((option) => (
                         <option key={option} value={option}>
                           {option}
                         </option>
@@ -184,14 +164,35 @@ export default function StartProjectPage() {
 
                   <label className="block">
                     <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
-                      Project details / message
+                      {content.form.fields.contactMethod}
+                    </span>
+                    <select
+                      name="contactMethod"
+                      required
+                      defaultValue=""
+                      className="w-full rounded-2xl border border-white/12 bg-[#1d211f] px-4 py-3 text-sm text-white outline-none focus:border-[#c8c2b4]"
+                    >
+                      <option value="" disabled>
+                        {content.form.placeholders.contactMethod}
+                      </option>
+                      {content.form.contactMethods.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
+                  </label>
+
+                  <label className="block">
+                    <span className="mb-2 block text-sm font-medium text-[#f4f1ea]">
+                      {content.form.fields.message}
                     </span>
                     <textarea
                       name="message"
                       required
                       rows={6}
                       className="w-full rounded-2xl border border-white/12 bg-white/[0.05] px-4 py-3 text-sm text-white outline-none placeholder:text-[#9da3a9] focus:border-[#c8c2b4]"
-                      placeholder="Tell me about the project, timeline, and what kind of help you need."
+                      placeholder={content.form.placeholders.message}
                     />
                   </label>
 
@@ -199,7 +200,7 @@ export default function StartProjectPage() {
                     type="submit"
                     className="inline-flex w-full items-center justify-center rounded-full bg-[#f4f1ea] px-6 py-4 text-sm font-semibold text-[#111312] shadow-sm transition-colors hover:bg-white sm:w-auto"
                   >
-                    Send project details
+                    {content.form.submit}
                   </button>
                 </form>
               </div>
@@ -207,7 +208,7 @@ export default function StartProjectPage() {
           </section>
         </div>
       </main>
-      <Footer />
+      <Footer content={content} />
     </div>
   );
 }

@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const stats = [
-  ["Drone", "Aerial filming with scale and atmosphere"],
-  ["Edit", "Polished cuts for web, reels, and launch assets"],
-  ["Web", "Clean websites and social-ready visual systems"],
-];
+import { getProjectHref, type SiteContent } from "@/lib/content";
 
-export function Hero() {
+type HeroProps = {
+  content: SiteContent;
+};
+
+export function Hero({ content }: HeroProps) {
   return (
     <section
       id="home"
@@ -16,7 +16,7 @@ export function Hero() {
     >
       <Image
         src="/images/altus-luna-hero-bg.png"
-        alt="Moonlit city skyline with a drone silhouette"
+        alt={content.hero.imageAlt}
         fill
         priority
         sizes="100vw"
@@ -28,18 +28,16 @@ export function Hero() {
       <div className="mx-auto flex min-h-[82svh] max-w-6xl items-center px-5 py-20 sm:px-8 lg:px-12 lg:py-24">
         <div className="max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.26em] text-[#c8c2b4]">
-            Altus Luna creative media
+            {content.hero.eyebrow}
           </p>
           <h1
             id="hero-heading"
             className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.06] text-white sm:text-5xl lg:text-6xl"
           >
-            Cinematic visuals for brands ready to be seen with more depth.
+            {content.hero.title}
           </h1>
           <p className="mt-7 max-w-2xl text-lg leading-8 text-[#d8d2c4] sm:text-xl sm:leading-9">
-            Drone shooting, aerial filming, video editing, website builds, and
-            social content for local businesses, property professionals, service
-            brands, and teams that need stronger online presence.
+            {content.hero.description}
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -47,18 +45,18 @@ export function Hero() {
               href="#services"
               className="inline-flex items-center justify-center rounded-full bg-[#f4f1ea] px-6 py-4 text-sm font-semibold text-[#111312] shadow-[0_16px_40px_rgba(0,0,0,0.28)] transition-colors hover:bg-white"
             >
-              Explore services
+              {content.hero.primaryCta}
             </a>
             <Link
-              href="/start-project"
+              href={getProjectHref(content.language)}
               className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/8 px-6 py-4 text-sm font-semibold text-white backdrop-blur transition-colors hover:bg-white/14"
             >
-              Plan a project
+              {content.hero.secondaryCta}
             </Link>
           </div>
 
           <dl className="mt-12 grid max-w-2xl gap-5 border-t border-white/14 pt-7 sm:grid-cols-3">
-            {stats.map(([term, detail]) => (
+            {content.hero.stats.map(([term, detail]) => (
               <div key={term}>
                 <dt className="text-xs font-semibold uppercase tracking-[0.22em] text-[#c8c2b4]">
                   {term}

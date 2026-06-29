@@ -20,6 +20,13 @@ export const metadata: Metadata = {
   },
   description:
     "Premium cinematic drone shooting, aerial filming, video editing, web design and social-ready content for businesses in Cyprus.",
+  alternates: {
+    canonical: "/",
+    languages: {
+      en: "/",
+      el: "/gr",
+    },
+  },
   icons: {
     icon: [
       { url: "/favicon.png?v=5", sizes: "512x512", type: "image/png" },
@@ -59,6 +66,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${geistSans.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full">{children}</body>
