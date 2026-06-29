@@ -11,18 +11,23 @@ export function CTASection({ content }: CTASectionProps) {
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="relative overflow-hidden bg-[#f4f1ea] px-5 py-20 sm:px-8 lg:px-12 lg:py-28"
+      className="ambient-gradient relative overflow-hidden bg-[linear-gradient(180deg,#080a0a_0%,#101718_38%,#0b0f11_66%,#050606_100%)] py-20 lg:py-28"
     >
-      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-[#101211]" />
-      <div className="relative mx-auto grid max-w-6xl gap-10 overflow-hidden rounded-[1.5rem] border border-white/12 bg-[#151817] p-8 text-[#f4f1ea] shadow-[0_28px_80px_rgba(17,19,18,0.22)] sm:p-10 lg:grid-cols-[1fr_0.72fr] lg:items-center lg:p-14">
-        <div className="absolute right-8 top-8 h-28 w-28 rounded-full border border-white/10" />
+      <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(244,241,234,0.28),rgba(145,168,191,0.18),transparent)]" />
+      <div className="absolute bottom-[-12rem] left-1/2 h-[40rem] w-[58rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(216,210,196,0.26),rgba(111,132,154,0.18),transparent_70%)] blur-3xl" />
+      <div className="absolute left-[-12rem] top-8 h-[28rem] w-[28rem] rounded-full bg-[#7d8fa8]/24 blur-3xl" />
+      <div className="page-shell relative grid gap-10 overflow-hidden rounded-[1.5rem] border border-transparent bg-[linear-gradient(145deg,rgba(28,34,33,0.92),rgba(7,10,10,0.97))_padding-box,linear-gradient(135deg,rgba(244,241,234,0.52),rgba(126,147,169,0.4),rgba(95,81,132,0.2),rgba(244,241,234,0.12))_border-box] p-7 text-[#f4f1ea] shadow-[0_40px_140px_rgba(0,0,0,0.52)] ring-1 ring-white/5 backdrop-blur sm:p-10 lg:grid-cols-[1fr_0.78fr] lg:items-center lg:p-14">
+        <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(244,241,234,0.66),rgba(145,168,191,0.32),transparent)]" />
+        <div className="absolute right-8 top-8 h-28 w-28 rounded-full border border-white/12 bg-[radial-gradient(circle,rgba(244,241,234,0.12),transparent_70%)]" />
+        <div className="absolute -left-20 bottom-8 h-64 w-64 rounded-full bg-[#9fb1c4]/22 blur-3xl" />
+        <div className="absolute right-[-8rem] bottom-[-8rem] h-80 w-80 rounded-full bg-[#d8d2c4]/14 blur-3xl" />
         <div>
-          <p className="text-sm font-medium uppercase tracking-[0.22em] text-[#c8c2b4]">
+          <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#c8c2b4]">
             {content.cta.eyebrow}
           </p>
           <h2
             id="contact-heading"
-            className="relative mt-4 max-w-3xl text-3xl font-semibold text-white sm:text-4xl"
+            className="relative mt-4 max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl"
           >
             {content.cta.title}
           </h2>
@@ -30,7 +35,7 @@ export function CTASection({ content }: CTASectionProps) {
             {content.cta.tags.map((item) => (
               <span
                 key={item}
-                className="rounded-full border border-white/12 bg-white/[0.06] px-4 py-2"
+                className="rounded-full border border-white/14 bg-[linear-gradient(180deg,rgba(255,255,255,0.1),rgba(255,255,255,0.035))] px-4 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur"
               >
                 {item}
               </span>
@@ -43,25 +48,25 @@ export function CTASection({ content }: CTASectionProps) {
           </p>
           <Link
             href={getProjectHref(content.language)}
-            className="mt-7 inline-flex items-center justify-center rounded-full bg-[#f4f1ea] px-6 py-4 text-sm font-semibold text-[#111312] shadow-sm transition-colors hover:bg-white"
+            className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-[linear-gradient(135deg,#ffffff,#d8d2c4)] px-6 py-4 text-sm font-semibold text-[#111312] shadow-[0_18px_48px_rgba(244,241,234,0.16)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_58px_rgba(244,241,234,0.22)] sm:w-auto"
           >
             {content.cta.button}
           </Link>
-          <div className="mt-7 space-y-3 text-sm text-[#f4f1ea]">
+          <div className="mt-7 grid gap-3 text-sm text-[#f4f1ea]">
             <a
               href="mailto:pawel@altusluna.com"
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 transition-colors hover:bg-white/[0.08]"
+              className="glass-hover-sweep group relative flex min-w-0 items-center gap-3 overflow-hidden rounded-2xl border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/[0.1]"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.06]">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] transition-colors group-hover:bg-white/[0.1]">
                 @
               </span>
-              <span>pawel@altusluna.com</span>
+              <span className="min-w-0 break-words">pawel@altusluna.com</span>
             </a>
             <a
               href="tel:+35797492264"
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 transition-colors hover:bg-white/[0.08]"
+              className="glass-hover-sweep group relative flex min-w-0 items-center gap-3 overflow-hidden rounded-2xl border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/[0.1]"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.06]">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] transition-colors group-hover:bg-white/[0.1]">
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 24 24"
@@ -75,15 +80,15 @@ export function CTASection({ content }: CTASectionProps) {
                   />
                 </svg>
               </span>
-              <span>+35797492264</span>
+              <span className="min-w-0 break-words">+35797492264</span>
             </a>
             <a
               href="https://instagram.com/altusluna"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.04] px-4 py-3 transition-colors hover:bg-white/[0.08]"
+              className="glass-hover-sweep group relative flex min-w-0 items-center gap-3 overflow-hidden rounded-2xl border border-white/12 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/[0.1]"
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.06]">
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] transition-colors group-hover:bg-white/[0.1]">
                 <svg
                   aria-hidden="true"
                   viewBox="0 0 24 24"

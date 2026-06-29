@@ -98,7 +98,7 @@ export type SiteContent = {
 };
 
 const sharedWorkImages = {
-  drone: "/images/Drone in Nature - Mountains & Sea.png",
+  drone: "/images/drone-in-nature-mountains-sea.png",
   workspace:
     "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=85",
   property:

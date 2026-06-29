@@ -82,7 +82,7 @@ export function StartProjectContent({ content }: { content: SiteContent }) {
                   data-netlify="true"
                   netlify-honeypot="bot-field"
                   onSubmit={handleSubmit}
-                  className="space-y-5"
+                  className="space-y-5 pt-12 sm:pt-0"
                 >
                   <input type="hidden" name="form-name" value="start-project" />
                   <input type="hidden" name="bot-field" />

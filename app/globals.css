@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f4f1ea;
-  --foreground: #161817;
+  --background: #070909;
+  --foreground: #f4f1ea;
 }
 
 @theme inline {
@@ -19,6 +19,126 @@ body {
 }
 
 ::selection {
-  background: #c8c2b4;
-  color: #101211;
+  background: #e6dfcf;
+  color: #070909;
+}
+
+a,
+button,
+input,
+select,
+textarea {
+  outline-color: #d8d2c4;
+}
+
+.page-shell {
+  width: calc(100% - 2.5rem);
+  max-width: 80rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .page-shell {
+    width: calc(100% - 3rem);
+  }
+}
+
+@media (min-width: 768px) {
+  .page-shell {
+    width: calc(100% - 4rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-shell {
+    width: calc(100% - 5rem);
+  }
+}
+
+@keyframes soft-scan {
+  0% {
+    transform: translate3d(-180%, 0, 0) skewX(-16deg);
+    opacity: 0;
+  }
+
+  16% {
+    opacity: 0.42;
+  }
+
+  76% {
+    opacity: 0.34;
+  }
+
+  100% {
+    transform: translate3d(420%, 0, 0) skewX(-16deg);
+    opacity: 0;
+  }
+}
+
+@keyframes ambient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes hover-sweep {
+  0% {
+    transform: translate3d(-180%, 0, 0) skewX(-16deg);
+    opacity: 0;
+  }
+
+  24% {
+    opacity: 0.42;
+  }
+
+  100% {
+    transform: translate3d(430%, 0, 0) skewX(-16deg);
+    opacity: 0;
+  }
+}
+
+.soft-scan::after {
+  animation: soft-scan 7.25s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+}
+
+.ambient-gradient {
+  background-size: 140% 140%;
+  animation: ambient-shift 18s ease-in-out infinite;
+}
+
+.glass-hover-sweep::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset-block: -32%;
+  left: 0;
+  width: 34%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.16),
+    transparent
+  );
+  opacity: 0;
+  transform: translate3d(-180%, 0, 0) skewX(-16deg);
+}
+
+.glass-hover-sweep:hover::after {
+  animation: hover-sweep 1.45s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .soft-scan::after,
+  .ambient-gradient,
+  .glass-hover-sweep:hover::after {
+    animation: none;
+  }
 }
