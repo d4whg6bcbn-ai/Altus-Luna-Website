@@ -18,7 +18,7 @@ export function ServicesSection({ content }: ServicesSectionProps) {
       <div className="absolute left-1/2 top-1/2 h-[42rem] w-[42rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(157,174,192,0.18),rgba(74,91,112,0.1),transparent_68%)] blur-2xl" />
       <div className="absolute right-[-10rem] bottom-8 h-[28rem] w-[28rem] rounded-full bg-[#d8d2c4]/[0.16] blur-3xl" />
       <div className="page-shell relative">
-        <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <div className="grid gap-7 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#c8c2b4]">
               {content.services.eyebrow}
@@ -30,7 +30,7 @@ export function ServicesSection({ content }: ServicesSectionProps) {
               {content.services.title}
             </h2>
           </div>
-          <p className="max-w-2xl text-base leading-8 text-[#c9c6bd] sm:text-lg">
+          <p className="max-w-2xl text-base leading-8 text-[#c9c6bd] sm:text-lg lg:pt-8">
             {content.services.description}
           </p>
         </div>

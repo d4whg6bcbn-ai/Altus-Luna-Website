@@ -173,10 +173,9 @@ export const siteContent: Record<Language, SiteContent> = {
     },
     work: {
       eyebrow: "Work preview",
-      title:
-        "Formats built for properties, service businesses, and practical online visibility.",
+      title: "Real project previews across aerial filming, edits, and web.",
       description:
-        "A first portfolio can stay honest: these are the kinds of assets Altus Luna is designed to create, not inflated case studies.",
+        "A focused look at live video work and web design projects for Cyprus places, businesses, and practical online visibility.",
       items: [
         {
           title: "Aerial project showcase",
@@ -348,9 +347,9 @@ export const siteContent: Record<Language, SiteContent> = {
     work: {
       eyebrow: "Δείγμα δουλειάς",
       title:
-        "Μορφές περιεχομένου σχεδιασμένες για ακίνητα, επιχειρήσεις υπηρεσιών και πρακτική διαδικτυακή προβολή.",
+        "Πραγματικά δείγματα έργων σε εναέρια λήψη, μοντάζ και ιστοσελίδες.",
       description:
-        "Ένα πρώτο χαρτοφυλάκιο μπορεί να παραμένει ειλικρινές: αυτά είναι τα είδη υλικού που η Altus Luna έχει σχεδιαστεί να δημιουργεί, όχι υπερβολικές παρουσιάσεις έργων.",
+        "Μια καθαρή ματιά σε video και web design έργα για τόπους, επιχειρήσεις και πρακτική διαδικτυακή προβολή στην Κύπρο.",
       items: [
         {
           title: "Εναέρια παρουσίαση έργου",
