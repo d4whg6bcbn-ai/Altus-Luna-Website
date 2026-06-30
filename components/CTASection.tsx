@@ -13,12 +13,19 @@ export function CTASection({ content }: CTASectionProps) {
       aria-labelledby="contact-heading"
       className="ambient-gradient relative overflow-hidden bg-[linear-gradient(180deg,#080a0a_0%,#101718_38%,#0b0f11_66%,#050606_100%)] py-20 lg:py-28"
     >
-      <div className="absolute inset-0 bg-[url('/images/altus-luna-hero-bg.png')] bg-cover bg-center opacity-[0.9]" />
+      <div className="absolute inset-0 origin-left scale-[1.1] bg-[url('/images/altus-luna-hero-bg.png')] bg-cover bg-center opacity-[0.9] sm:scale-[1.12] lg:scale-[1.16] lg:bg-[position:34%_center]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_78%_22%,rgba(181,199,218,0.16),transparent_32%),linear-gradient(90deg,rgba(7,9,9,0.88)_0%,rgba(7,9,9,0.56)_42%,rgba(7,9,9,0.12)_100%),linear-gradient(180deg,rgba(7,9,9,0.5)_0%,rgba(7,9,9,0.1)_48%,rgba(5,6,6,0.84)_100%)]" />
       <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(244,241,234,0.28),rgba(145,168,191,0.18),transparent)]" />
       <div className="absolute bottom-[-12rem] left-1/2 h-[40rem] w-[58rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(216,210,196,0.26),rgba(111,132,154,0.18),transparent_70%)] blur-3xl" />
       <div className="absolute left-[-12rem] top-8 h-[28rem] w-[28rem] rounded-full bg-[#7d8fa8]/24 blur-3xl" />
-      <div className="page-shell relative grid gap-10 overflow-hidden rounded-[1.5rem] border border-transparent bg-[linear-gradient(145deg,rgba(28,34,33,0.42),rgba(7,10,10,0.54))_padding-box,linear-gradient(135deg,rgba(244,241,234,0.46),rgba(126,147,169,0.34),rgba(95,81,132,0.18),rgba(244,241,234,0.1))_border-box] p-7 text-[#f4f1ea] shadow-[0_40px_140px_rgba(0,0,0,0.48)] ring-1 ring-white/5 backdrop-blur-md sm:p-10 lg:grid-cols-[1fr_0.78fr] lg:items-center lg:p-14">
+      <div
+        className="page-shell relative grid gap-10 overflow-hidden rounded-[1.5rem] border border-transparent bg-[linear-gradient(145deg,rgba(28,34,33,0.42),rgba(7,10,10,0.54))_padding-box,linear-gradient(135deg,rgba(244,241,234,0.46),rgba(126,147,169,0.34),rgba(95,81,132,0.18),rgba(244,241,234,0.1))_border-box] p-7 text-[#f4f1ea] shadow-[0_40px_140px_rgba(0,0,0,0.48)] ring-1 ring-white/5 backdrop-blur-md sm:p-10 lg:grid-cols-[1fr_0.78fr] lg:items-center lg:p-14"
+        style={{
+          marginInlineEnd: "auto",
+          marginInlineStart: "max(1.25rem, calc((100% - 80rem) / 2))",
+          maxWidth: "58rem",
+        }}
+      >
         <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(244,241,234,0.66),rgba(145,168,191,0.32),transparent)]" />
         <div className="absolute right-8 top-8 h-28 w-28 rounded-full border border-white/12 bg-[radial-gradient(circle,rgba(244,241,234,0.12),transparent_70%)]" />
         <div className="absolute -left-20 bottom-8 h-64 w-64 rounded-full bg-[#9fb1c4]/22 blur-3xl" />
