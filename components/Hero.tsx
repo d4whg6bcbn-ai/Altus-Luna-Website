@@ -15,7 +15,7 @@ export function Hero({ content }: HeroProps) {
     >
       <div className="absolute inset-0 -z-30 bg-[#070909]">
         <video
-          className="h-full w-full object-cover object-center opacity-[0.78] brightness-[1.1] contrast-[1.04] saturate-[1.04] motion-reduce:hidden sm:opacity-[0.84] lg:opacity-[0.9]"
+          className="h-full w-full object-cover object-center opacity-100 brightness-[1.48] contrast-[1.04] saturate-[1.12] motion-reduce:hidden"
           autoPlay
           muted
           loop
@@ -31,10 +31,10 @@ export function Hero({ content }: HeroProps) {
           className="hidden h-full w-full bg-[url('/images/altus-luna-hero-bg.png')] bg-cover bg-center opacity-[0.82] motion-reduce:block"
         />
       </div>
-      <div className="ambient-gradient absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_76%_18%,rgba(222,232,242,0.16),transparent_28%),radial-gradient(ellipse_at_78%_72%,rgba(108,131,156,0.22),transparent_42%),linear-gradient(90deg,rgba(7,9,9,0.96)_0%,rgba(7,9,9,0.84)_30%,rgba(7,9,9,0.5)_64%,rgba(7,9,9,0.68)_100%),linear-gradient(180deg,rgba(7,9,9,0.74)_0%,rgba(7,9,9,0.12)_42%,#070909_100%)]" />
-      <div className="absolute inset-x-0 top-0 -z-10 h-44 bg-[linear-gradient(180deg,#070909_0%,rgba(7,9,9,0)_100%)]" />
-      <div className="absolute inset-x-0 bottom-0 -z-10 h-64 bg-[linear-gradient(0deg,#070909_0%,rgba(7,9,9,0)_100%)]" />
-      <div className="absolute bottom-[-7rem] right-[-8rem] -z-10 h-[24rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(181,199,218,0.22),rgba(91,116,142,0.1),transparent_70%)] blur-3xl" />
+      <div className="ambient-gradient absolute inset-0 -z-20 bg-[radial-gradient(ellipse_at_74%_14%,rgba(235,241,247,0.14),transparent_30%),radial-gradient(ellipse_at_78%_72%,rgba(108,131,156,0.12),transparent_46%),radial-gradient(ellipse_at_42%_38%,rgba(186,204,224,0.08),transparent_48%),linear-gradient(90deg,rgba(7,9,9,0.78)_0%,rgba(7,9,9,0.54)_28%,rgba(7,9,9,0.08)_58%,rgba(7,9,9,0.12)_100%),linear-gradient(180deg,rgba(7,9,9,0.28)_0%,rgba(7,9,9,0)_46%,#070909_100%)]" />
+      <div className="absolute inset-x-0 top-0 -z-10 h-36 bg-[linear-gradient(180deg,rgba(7,9,9,0.58)_0%,rgba(7,9,9,0)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 -z-10 h-80 bg-[linear-gradient(0deg,#070909_0%,rgba(7,9,9,0.22)_42%,rgba(7,9,9,0)_100%)]" />
+      <div className="absolute bottom-[-7rem] right-[-8rem] -z-10 h-[24rem] w-[32rem] rounded-full bg-[radial-gradient(circle,rgba(181,199,218,0.22),rgba(91,116,142,0.08),transparent_70%)] blur-3xl" />
       <div className="absolute left-0 top-0 -z-10 h-full w-full bg-[linear-gradient(rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:72px_72px] opacity-30 [mask-image:linear-gradient(180deg,black,transparent_74%)]" />
 
       <div className="page-shell relative z-10 flex min-h-[calc(100svh-4.75rem)] items-center py-16 sm:py-20 lg:py-24">
@@ -45,11 +45,11 @@ export function Hero({ content }: HeroProps) {
           </div>
           <h1
             id="hero-heading"
-            className="mt-7 max-w-3xl text-4xl font-semibold leading-[1.03] text-white sm:text-5xl lg:text-6xl"
+            className="mt-7 max-w-3xl text-4xl font-semibold leading-[1.03] text-white drop-shadow-[0_6px_34px_rgba(0,0,0,0.62)] sm:text-5xl lg:text-6xl"
           >
             {content.hero.title}
           </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#d8d2c4] sm:text-xl sm:leading-9">
+          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#e4dfd3] drop-shadow-[0_3px_22px_rgba(0,0,0,0.58)] sm:text-xl sm:leading-9">
             {content.hero.description}
           </p>
 

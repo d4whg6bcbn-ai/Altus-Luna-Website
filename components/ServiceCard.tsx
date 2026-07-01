@@ -31,11 +31,11 @@ export function ServiceCard({
   const accentGlow = accentGlows[index % accentGlows.length];
 
   return (
-    <article className="glass-hover-sweep group relative flex h-full min-h-[25rem] flex-col justify-between overflow-hidden rounded-[1.35rem] border border-transparent bg-[linear-gradient(145deg,rgba(28,34,33,0.84),rgba(7,10,10,0.96))_padding-box,linear-gradient(135deg,rgba(244,241,234,0.42),rgba(132,154,176,0.3),rgba(112,94,153,0.14),rgba(244,241,234,0.08))_border-box] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.26)] backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_34px_100px_rgba(0,0,0,0.46)]">
+    <article className="glass-hover-sweep group relative flex h-full min-h-[25rem] flex-col justify-between overflow-hidden rounded-[1.35rem] border border-transparent bg-[linear-gradient(145deg,rgba(34,42,42,0.78),rgba(9,14,14,0.9))_padding-box,linear-gradient(135deg,rgba(244,241,234,0.46),rgba(145,168,191,0.34),rgba(112,94,153,0.14),rgba(244,241,234,0.08))_border-box] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_34px_100px_rgba(0,0,0,0.42)]">
       <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(244,241,234,0.72),rgba(145,168,191,0.34),transparent)] opacity-75 transition-opacity duration-300 group-hover:opacity-100" />
       <div className={`absolute -right-16 -top-14 h-40 w-40 rounded-full bg-gradient-to-br ${accentGlow} to-transparent blur-2xl transition-transform duration-500 group-hover:scale-125`} />
       <div className="absolute -left-20 top-1/2 h-44 w-44 -translate-y-1/2 rounded-full bg-[#6f879f]/10 blur-3xl transition-opacity duration-300 group-hover:opacity-100" />
-      <div className="absolute bottom-0 left-0 h-40 w-full bg-[linear-gradient(0deg,rgba(216,210,196,0.16),rgba(125,148,170,0.09),transparent)] opacity-95" />
+      <div className="absolute bottom-0 left-0 h-40 w-full bg-[linear-gradient(0deg,rgba(216,210,196,0.18),rgba(145,168,191,0.1),transparent)] opacity-95" />
       <div>
         <div className="relative mb-7 flex items-center justify-between gap-4">
           <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/14 bg-[linear-gradient(145deg,rgba(255,255,255,0.13),rgba(255,255,255,0.04))] text-[#f4f1ea] shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_16px_34px_rgba(0,0,0,0.18)]">

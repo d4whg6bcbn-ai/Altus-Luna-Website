@@ -121,12 +121,12 @@ export function PortfolioPreview({ content }: PortfolioPreviewProps) {
     <section
       id="work"
       aria-labelledby="work-heading"
-      className="ambient-gradient relative overflow-hidden border-y border-white/10 bg-[linear-gradient(180deg,#070909_0%,#101718_40%,#070909_100%)] py-20 text-[#f4f1ea] lg:py-28"
+      className="ambient-gradient relative overflow-hidden border-y border-white/10 bg-[linear-gradient(180deg,#080b0b_0%,#132022_42%,#090c0c_100%)] py-20 text-[#f4f1ea] lg:py-28"
     >
       <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,transparent,rgba(244,241,234,0.28),rgba(145,168,191,0.18),transparent)]" />
-      <div className="absolute left-[-10rem] top-16 h-[32rem] w-[32rem] rounded-full bg-[#7d8fa8]/22 blur-3xl" />
-      <div className="absolute right-[-12rem] top-1/3 h-[34rem] w-[34rem] rounded-full bg-[#d8d2c4]/12 blur-3xl" />
-      <div className="absolute bottom-[-14rem] left-1/2 h-[38rem] w-[48rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(126,147,169,0.18),rgba(95,81,132,0.08),transparent_70%)] blur-3xl" />
+      <div className="absolute left-[-10rem] top-16 h-[32rem] w-[32rem] rounded-full bg-[#7d8fa8]/26 blur-3xl" />
+      <div className="absolute right-[-12rem] top-1/3 h-[34rem] w-[34rem] rounded-full bg-[#d8d2c4]/14 blur-3xl" />
+      <div className="absolute bottom-[-14rem] left-1/2 h-[38rem] w-[48rem] -translate-x-1/2 rounded-full bg-[radial-gradient(circle,rgba(145,168,191,0.22),rgba(95,81,132,0.09),transparent_70%)] blur-3xl" />
 
       <div className="page-shell relative">
         <div className="grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
@@ -167,7 +167,7 @@ export function PortfolioPreview({ content }: PortfolioPreviewProps) {
         </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-[0.44fr_0.56fr] lg:items-stretch">
-          <div className="rounded-[1.35rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.07),rgba(255,255,255,0.025))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.05)] backdrop-blur">
+          <div className="rounded-[1.35rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.085),rgba(255,255,255,0.032))] p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] backdrop-blur">
             <p className="text-xs font-semibold uppercase tracking-[0.26em] text-[#c8c2b4]">
               {text.webHeading}
             </p>

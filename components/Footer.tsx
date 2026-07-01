@@ -17,10 +17,10 @@ export function Footer({ content }: FooterProps) {
   ];
 
   return (
-    <footer className="ambient-gradient relative overflow-hidden border-t border-white/10 bg-[linear-gradient(180deg,#050606_0%,#0b1010_52%,#111717_100%)] py-12 text-[#f4f1ea]">
+    <footer className="ambient-gradient relative overflow-hidden border-t border-white/10 bg-[linear-gradient(180deg,#070909_0%,#0e1515_52%,#141d1d_100%)] py-12 text-[#f4f1ea]">
       <div className="absolute left-1/2 top-0 h-px w-[min(80rem,calc(100%-2.5rem))] -translate-x-1/2 bg-[linear-gradient(90deg,transparent,rgba(244,241,234,0.28),rgba(145,168,191,0.18),transparent)]" />
-      <div className="absolute right-[-10rem] top-[-10rem] h-[28rem] w-[28rem] rounded-full bg-[#d8d2c4]/[0.16] blur-3xl" />
-      <div className="absolute bottom-[-12rem] left-[-10rem] h-[28rem] w-[28rem] rounded-full bg-[#7f95ad]/22 blur-3xl" />
+      <div className="absolute right-[-10rem] top-[-10rem] h-[28rem] w-[28rem] rounded-full bg-[#d8d2c4]/[0.18] blur-3xl" />
+      <div className="absolute bottom-[-12rem] left-[-10rem] h-[28rem] w-[28rem] rounded-full bg-[#7f95ad]/26 blur-3xl" />
       <div className="page-shell relative flex flex-col gap-10 md:flex-row md:items-center md:justify-between">
         <div className="flex max-w-xl flex-col gap-5">
           <div className="flex h-12 w-fit items-center gap-3 rounded-full border border-white/10 bg-black/70 py-1.5 pl-1.5 pr-4 shadow-[0_14px_40px_rgba(0,0,0,0.28)] sm:h-14 sm:gap-3.5 sm:pr-5">
