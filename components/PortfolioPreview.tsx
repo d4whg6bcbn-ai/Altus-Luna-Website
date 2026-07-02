@@ -74,6 +74,9 @@ const uiText = {
       "A multilingual real estate website for a Cyprus-based property advisor, designed to present listings, consultation flow, and market guidance in a premium black-and-gold style.",
     browserBadge: "Live website",
     browserUrl: "projectcyprus.com",
+    browserCategory: "Real Estate Advisory",
+    browserTagListings: "Listings",
+    browserTagConsultation: "Consultation",
   },
   gr: {
     droneHeading: "Drone & Edit",
@@ -85,9 +88,12 @@ const uiText = {
     visit: "Άνοιγμα ιστοσελίδας",
     webTitle: "Project Cyprus",
     webDescription:
-      "Μια πολύγλωσση ιστοσελίδα ακινήτων για σύμβουλο στην Κύπρο, σχεδιασμένη για παρουσιάσεις ακινήτων, ροή συμβουλευτικής και premium black-and-gold ύφος.",
-    browserBadge: "Live website",
+      "Μια πολύγλωσση ιστοσελίδα ακινήτων για σύμβουλο στην Κύπρο, σχεδιασμένη για παρουσιάσεις ακινήτων, ροή συμβουλευτικής και premium ύφος σε μαύρο και χρυσό.",
+    browserBadge: "Ζωντανή ιστοσελίδα",
     browserUrl: "projectcyprus.com",
+    browserCategory: "Συμβουλευτική ακινήτων",
+    browserTagListings: "Καταχωρίσεις",
+    browserTagConsultation: "Συμβουλευτική",
   },
 };
 
@@ -222,17 +228,17 @@ export function PortfolioPreview({ content }: PortfolioPreviewProps) {
                     {text.browserBadge}
                   </span>
                   <p className="mt-4 text-xs font-semibold uppercase tracking-[0.22em] text-[#d8c27a]">
-                    Real Estate Advisory
+                    {text.browserCategory}
                   </p>
                   <p className="mt-3 text-3xl font-semibold leading-tight text-white">
                     Project Cyprus
                   </p>
                   <div className="mt-5 flex flex-wrap gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.14em] text-[#eadcb0]">
                     <span className="rounded-full border border-[#d8c27a]/22 bg-[#d8c27a]/10 px-3 py-2">
-                      Listings
+                      {text.browserTagListings}
                     </span>
                     <span className="rounded-full border border-[#d8c27a]/22 bg-[#d8c27a]/10 px-3 py-2">
-                      Consultation
+                      {text.browserTagConsultation}
                     </span>
                   </div>
                 </div>
