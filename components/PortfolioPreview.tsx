@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-import type { SiteContent } from "@/lib/content";
+import type { Language, SiteContent } from "@/lib/content";
 
 type PortfolioPreviewProps = {
   content: SiteContent;
@@ -17,46 +17,103 @@ type VideoProject = {
   posterSrc: string;
 };
 
-const videoProjects: VideoProject[] = [
+type VideoProjectSource = {
+  src: string;
+  posterSrc: string;
+  copy: Record<Language, Omit<VideoProject, "src" | "posterSrc">>;
+};
+
+// Homepage work items are bilingual: update both English and Greek copy together.
+const videoProjects: VideoProjectSource[] = [
   {
-    title: "Antoine Gardens",
-    description:
-      "A vertical garden showcase filmed in Tala, capturing a beautiful private garden arranged across seven levels.",
     src: "/videos/Garden - Vertical (added logo).mp4",
-    visualLabel: "Garden showcase",
     posterSrc: "/images/work/garden-preview.jpg",
+    copy: {
+      en: {
+        title: "Antoine Gardens",
+        description:
+          "A vertical garden showcase filmed in Tala, capturing a beautiful private garden arranged across seven levels.",
+        visualLabel: "Garden showcase",
+      },
+      gr: {
+        title: "Antoine Gardens",
+        description:
+          "Ένα κάθετο βίντεο παρουσίασης κήπου στην Τάλα, με έναν όμορφο ιδιωτικό κήπο διαμορφωμένο σε επτά επίπεδα.",
+        visualLabel: "ΠΑΡΟΥΣΙΑΣΗ ΚΗΠΟΥ",
+      },
+    },
   },
   {
-    title: "Jeep Invasion Nicosia",
-    description:
-      "A dynamic event reel created for Mito Solar, proud sponsor of Jeep Invasion in Nicosia.",
     src: "/videos/Jeep Invasion Reel.mp4",
-    visualLabel: "Event reel",
     posterSrc: "/images/work/jeep-preview.jpg",
+    copy: {
+      en: {
+        title: "Jeep Invasion Nicosia",
+        description:
+          "A dynamic event reel created for Mito Solar, proud sponsor of Jeep Invasion in Nicosia.",
+        visualLabel: "Event reel",
+      },
+      gr: {
+        title: "Jeep Invasion Nicosia",
+        description:
+          "Ένα δυναμικό event reel για τη Mito Solar, υπερήφανο χορηγό του Jeep Invasion στη Λευκωσία.",
+        visualLabel: "EVENT REEL",
+      },
+    },
   },
   {
-    title: "Kykkos Monastery Travel Guide",
-    description:
-      "A short travel-guide style reel created for Project Cyprus, presenting the atmosphere and heritage of Kykkos Monastery.",
     src: "/videos/kykkos 2.mp4",
-    visualLabel: "Travel guide",
     posterSrc: "/images/work/kykkos-preview.jpg",
+    copy: {
+      en: {
+        title: "Kykkos Monastery Travel Guide",
+        description:
+          "A short travel-guide style reel created for Project Cyprus, presenting the atmosphere and heritage of Kykkos Monastery.",
+        visualLabel: "Travel guide",
+      },
+      gr: {
+        title: "Kykkos Monastery Travel Guide",
+        description:
+          "Ένα σύντομο travel-guide reel για το Project Cyprus, που παρουσιάζει την ατμόσφαιρα και την ιστορία της Μονής Κύκκου.",
+        visualLabel: "ΤΑΞΙΔΙΩΤΙΚΟΣ ΟΔΗΓΟΣ",
+      },
+    },
   },
   {
-    title: "Mito Solar Installation",
-    description:
-      "A two-day filming project documenting the full solar installation process from preparation to completed system.",
     src: "/videos/Panikos - Install.mp4",
-    visualLabel: "Install story",
     posterSrc: "/images/work/panikos-preview.jpg",
+    copy: {
+      en: {
+        title: "Mito Solar Installation",
+        description:
+          "A two-day filming project documenting the full solar installation process from preparation to completed system.",
+        visualLabel: "Install story",
+      },
+      gr: {
+        title: "Mito Solar Installation",
+        description:
+          "Ένα διήμερο project βιντεοσκόπησης που καταγράφει όλη τη διαδικασία εγκατάστασης φωτοβολταϊκού συστήματος, από την προετοιμασία μέχρι την ολοκλήρωση.",
+        visualLabel: "ΙΣΤΟΡΙΑ ΕΓΚΑΤΑΣΤΑΣΗΣ",
+      },
+    },
   },
   {
-    title: "Peyia Harbour & Akamas",
-    description:
-      "A short travel-guide style reel for Project Cyprus, presenting Peyia Harbour and the edge of the Akamas Peninsula.",
     src: "/videos/Peyia Harbour Reel.mp4",
-    visualLabel: "Coastal reel",
     posterSrc: "/images/work/peyia-harbour-preview.jpg",
+    copy: {
+      en: {
+        title: "Peyia Harbour & Akamas",
+        description:
+          "A short travel-guide style reel for Project Cyprus, presenting Peyia Harbour and the edge of the Akamas Peninsula.",
+        visualLabel: "Coastal reel",
+      },
+      gr: {
+        title: "Peyia Harbour & Akamas",
+        description:
+          "Ένα σύντομο travel-guide reel για το Project Cyprus, που παρουσιάζει το λιμανάκι της Πέγειας και την περιοχή προς τη Χερσόνησο του Ακάμα.",
+        visualLabel: "ΠΑΡΑΘΑΛΑΣΣΙΟ REEL",
+      },
+    },
   },
 ];
 
@@ -101,6 +158,11 @@ export function PortfolioPreview({ content }: PortfolioPreviewProps) {
   const [activeVideo, setActiveVideo] = useState<VideoProject | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const text = uiText[content.language];
+  const localizedVideoProjects = videoProjects.map((project) => ({
+    src: project.src,
+    posterSrc: project.posterSrc,
+    ...project.copy[content.language],
+  }));
 
   useEffect(() => {
     if (!activeVideo) return;
@@ -160,7 +222,7 @@ export function PortfolioPreview({ content }: PortfolioPreviewProps) {
           </div>
 
           <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {videoProjects.map((project) => (
+            {localizedVideoProjects.map((project) => (
               <VideoProjectCard
                 key={project.src}
                 project={project}

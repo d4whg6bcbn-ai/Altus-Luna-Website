@@ -16,6 +16,8 @@ export type SiteContent = {
     eyebrow: string;
     title: string;
     description: string;
+    glassLabel: string;
+    glassDescription: string;
     primaryCta: string;
     secondaryCta: string;
     imageAlt: string;
@@ -134,6 +136,9 @@ export const siteContent: Record<Language, SiteContent> = {
       title: "Cinematic visuals for brands ready to be seen with more depth.",
       description:
         "Drone shooting, aerial filming, video editing, website builds, and social content for local businesses, property professionals, service brands, and teams that need stronger online presence.",
+      glassLabel: "Capture to launch",
+      glassDescription:
+        "Aerial footage, short edits, websites, and social-ready assets shaped as one visual system.",
       primaryCta: "Explore services",
       secondaryCta: "Plan a project",
       imageAlt: "Moonlit city skyline with a drone silhouette",
@@ -336,6 +341,9 @@ export const siteContent: Record<Language, SiteContent> = {
         "Κινηματογραφικό οπτικό υλικό για επιχειρήσεις που θέλουν να ξεχωρίζουν με περισσότερη ουσία.",
       description:
         "Λήψεις με drone, εναέρια κινηματογράφηση, επεξεργασία βίντεο, κατασκευή ιστοσελίδων και περιεχόμενο για κοινωνικά δίκτυα για τοπικές επιχειρήσεις, επαγγελματίες ακινήτων, επιχειρήσεις υπηρεσιών και ομάδες που χρειάζονται πιο δυνατή διαδικτυακή παρουσία.",
+      glassLabel: "ΑΠΟ ΤΗ ΛΗΨΗ ΣΤΗ ΔΗΜΟΣΙΕΥΣΗ",
+      glassDescription:
+        "Εναέρια πλάνα, σύντομα βίντεο, ιστοσελίδες και περιεχόμενο για social media, όλα σχεδιασμένα ως ένα ενιαίο οπτικό σύστημα.",
       primaryCta: "Δείτε τις υπηρεσίες",
       secondaryCta: "Σχεδιάστε ένα έργο",
       imageAlt: "Νυχτερινό αστικό τοπίο με σιλουέτα drone",

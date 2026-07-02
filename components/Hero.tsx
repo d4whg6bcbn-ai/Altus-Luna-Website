@@ -45,11 +45,11 @@ export function Hero({ content }: HeroProps) {
           </div>
           <h1
             id="hero-heading"
-            className="mt-7 max-w-3xl text-4xl font-semibold leading-[1.03] text-white drop-shadow-[0_6px_34px_rgba(0,0,0,0.62)] sm:text-5xl lg:text-6xl"
+            className="mt-7 max-w-[21rem] break-words text-4xl font-semibold leading-[1.03] text-white drop-shadow-[0_6px_34px_rgba(0,0,0,0.62)] [text-wrap:balance] sm:max-w-3xl sm:text-5xl lg:text-6xl"
           >
             {content.hero.title}
           </h1>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-[#e4dfd3] drop-shadow-[0_3px_22px_rgba(0,0,0,0.58)] sm:text-xl sm:leading-9">
+          <p className="mt-7 max-w-[21rem] break-words text-lg leading-8 text-[#e4dfd3] drop-shadow-[0_3px_22px_rgba(0,0,0,0.58)] sm:max-w-2xl sm:text-xl sm:leading-9">
             {content.hero.description}
           </p>
 
@@ -79,15 +79,15 @@ export function Hero({ content }: HeroProps) {
                 <div className="absolute bottom-0 right-0 h-10 w-16 border-b border-r border-white/16" />
                 <div className="relative grid gap-5 sm:grid-cols-[0.82fr_1.18fr] sm:items-end">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#c8c2b4]">
-                      Capture to launch
+                    <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[#c8c2b4] sm:tracking-[0.22em]">
+                      {content.hero.glassLabel}
                     </p>
                     <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/10">
                       <div className="h-full w-2/3 rounded-full bg-[linear-gradient(90deg,#f4f1ea,#91a8bf)]" />
                     </div>
                   </div>
                   <p className="text-sm font-semibold leading-6 text-white sm:text-base sm:leading-7">
-                    Aerial footage, short edits, websites, and social-ready assets shaped as one visual system.
+                    {content.hero.glassDescription}
                   </p>
                 </div>
               </div>
