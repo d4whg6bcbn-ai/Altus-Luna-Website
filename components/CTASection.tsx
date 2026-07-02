@@ -1,10 +1,14 @@
 import Link from "next/link";
 
+import { CONTACT_PHONE_DISPLAY, getWhatsAppHref } from "@/lib/contact";
 import { getProjectHref, type SiteContent } from "@/lib/content";
 
 type CTASectionProps = {
   content: SiteContent;
 };
+
+const contactWhatsAppMessage =
+  "Hi Altus Luna, I’d like to discuss a project. Can we talk on WhatsApp?";
 
 export function CTASection({ content }: CTASectionProps) {
   return (
@@ -36,12 +40,43 @@ export function CTASection({ content }: CTASectionProps) {
           <p className="relative mt-6 max-w-md text-base leading-7 text-[#d8d2c4]">
             {content.cta.description}
           </p>
-          <Link
-            href={getProjectHref(content.language)}
-            className="relative mt-7 inline-flex w-full items-center justify-center rounded-full bg-[linear-gradient(135deg,#ffffff,#d8d2c4)] px-6 py-4 text-sm font-semibold text-[#111312] shadow-[0_18px_48px_rgba(244,241,234,0.16)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_58px_rgba(244,241,234,0.22)] sm:w-auto"
-          >
-            {content.cta.button}
-          </Link>
+          <div className="relative mt-7 flex flex-col gap-3 sm:flex-row">
+            <Link
+              href={getProjectHref(content.language)}
+              className="inline-flex w-full items-center justify-center rounded-full bg-[linear-gradient(135deg,#ffffff,#d8d2c4)] px-6 py-4 text-sm font-semibold text-[#111312] shadow-[0_18px_48px_rgba(244,241,234,0.16)] transition-all hover:-translate-y-0.5 hover:shadow-[0_22px_58px_rgba(244,241,234,0.22)] sm:w-auto"
+            >
+              {content.cta.button}
+            </Link>
+            <a
+              href={getWhatsAppHref(contactWhatsAppMessage)}
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Chat on WhatsApp about a project"
+              data-location="contact"
+              data-cta="whatsapp"
+              className="glass-hover-sweep inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-white/16 bg-[linear-gradient(135deg,rgba(255,255,255,0.14),rgba(255,255,255,0.055))] px-6 py-4 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.09),0_16px_42px_rgba(0,0,0,0.18)] backdrop-blur transition-all hover:-translate-y-0.5 hover:border-[#d8d2c4]/36 hover:bg-white/[0.14] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_20px_52px_rgba(145,168,191,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d8d2c4] sm:w-auto"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                className="h-4 w-4 shrink-0 fill-none stroke-current"
+              >
+                <path
+                  d="M6.2 18.2 4.5 20l.5-3.2A7.4 7.4 0 1 1 7.6 19a7.6 7.6 0 0 1-1.4-.8Z"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M9 9.4c.4 2.1 1.6 3.7 3.8 4.7l1.1-1.1 2 .7v1.4c0 .5-.4.9-.9.9A7.2 7.2 0 0 1 8 9c0-.5.4-.9.9-.9h1.4l.7 2-1 1.1Z"
+                  strokeWidth="1.35"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+              <span>Chat on WhatsApp</span>
+            </a>
+          </div>
           <div className="relative mt-7 grid gap-3 text-sm text-[#f4f1ea]">
             <a
               href="mailto:pawel@altusluna.com"
@@ -53,7 +88,7 @@ export function CTASection({ content }: CTASectionProps) {
               <span className="min-w-0 break-words">pawel@altusluna.com</span>
             </a>
             <a
-              href="tel:+35797492264"
+              href={`tel:${CONTACT_PHONE_DISPLAY}`}
               className="glass-hover-sweep group relative flex min-w-0 items-center gap-3 overflow-hidden rounded-2xl border border-white/14 bg-[linear-gradient(145deg,rgba(255,255,255,0.16),rgba(255,255,255,0.055))] px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.07)] backdrop-blur transition-all hover:-translate-y-0.5 hover:bg-white/[0.18]"
             >
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] transition-colors group-hover:bg-white/[0.1]">
@@ -70,7 +105,9 @@ export function CTASection({ content }: CTASectionProps) {
                   />
                 </svg>
               </span>
-              <span className="min-w-0 break-words">+35797492264</span>
+              <span className="min-w-0 break-words">
+                {CONTACT_PHONE_DISPLAY}
+              </span>
             </a>
             <a
               href="https://instagram.com/altusluna"
