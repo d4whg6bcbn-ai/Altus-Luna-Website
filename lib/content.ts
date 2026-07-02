@@ -30,6 +30,12 @@ export type SiteContent = {
       title: string;
       description: string;
       details: string;
+      whatsapp: {
+        service: string;
+        label: string;
+        message: string;
+        ariaLabel: string;
+      };
     }[];
   };
   work: {
@@ -55,6 +61,11 @@ export type SiteContent = {
     tags: string[];
     description: string;
     button: string;
+    whatsapp: {
+      label: string;
+      message: string;
+      ariaLabel: string;
+    };
   };
   footer: {
     description: string;
@@ -145,6 +156,13 @@ export const siteContent: Record<Language, SiteContent> = {
             "Smooth aerial footage for properties, projects, venues, outdoor work, and businesses that need scale and context.",
           details:
             "Planning, drone capture, smooth movement, location-focused shots",
+          whatsapp: {
+            service: "drone-filming",
+            label: "Ask about drone filming",
+            message:
+              "Hi Altus Luna, I’m interested in drone filming. Can we discuss a project?",
+            ariaLabel: "Ask about drone filming on WhatsApp",
+          },
         },
         {
           label: "Cut",
@@ -152,6 +170,13 @@ export const siteContent: Record<Language, SiteContent> = {
           description:
             "Clean, polished edits that turn raw footage into clear stories for websites, reels, listings, and campaigns.",
           details: "Reels, project highlights, captions, pacing, delivery formats",
+          whatsapp: {
+            service: "video-editing",
+            label: "Ask about video editing",
+            message:
+              "Hi Altus Luna, I’m interested in video editing. Can we discuss a project?",
+            ariaLabel: "Ask about video editing on WhatsApp",
+          },
         },
         {
           label: "Web",
@@ -160,6 +185,13 @@ export const siteContent: Record<Language, SiteContent> = {
             "Light, modern websites for local businesses, property teams, service brands, and owner-led companies.",
           details:
             "Page structure, copy direction, responsive design, launch-ready build",
+          whatsapp: {
+            service: "website-project",
+            label: "Discuss a website project",
+            message:
+              "Hi Altus Luna, I’m interested in a website project. Can we discuss what I need?",
+            ariaLabel: "Discuss a website project on WhatsApp",
+          },
         },
         {
           label: "Post",
@@ -168,6 +200,13 @@ export const siteContent: Record<Language, SiteContent> = {
             "Practical visual content for brands that want to stay visible without posting for the sake of it.",
           details:
             "Short-form videos, post ideas, simple content rhythm, platform-ready assets",
+          whatsapp: {
+            service: "social-content",
+            label: "Plan social content",
+            message:
+              "Hi Altus Luna, I’m interested in social media content. Can we discuss a content package?",
+            ariaLabel: "Plan social content on WhatsApp",
+          },
         },
       ],
     },
@@ -220,6 +259,12 @@ export const siteContent: Record<Language, SiteContent> = {
       description:
         "Share what you need captured, edited, designed, or published. Altus Luna can help turn the work you already do into clear visuals and a stronger web presence.",
       button: "Start your project form",
+      whatsapp: {
+        label: "Chat on WhatsApp",
+        message:
+          "Hi Altus Luna, I’d like to discuss a project. Can we talk on WhatsApp?",
+        ariaLabel: "Chat on WhatsApp about a project",
+      },
     },
     footer: {
       description:
@@ -317,6 +362,13 @@ export const siteContent: Record<Language, SiteContent> = {
             "Ομαλές εναέριες λήψεις για ακίνητα, έργα, χώρους, εξωτερικές εργασίες και επιχειρήσεις που χρειάζονται κλίμακα και πλαίσιο.",
           details:
             "Σχεδιασμός, λήψεις με drone, ομαλή κίνηση, λήψεις με έμφαση στην τοποθεσία",
+          whatsapp: {
+            service: "drone-filming",
+            label: "Ρωτήστε για λήψεις με drone",
+            message:
+              "Γεια σας Altus Luna, ενδιαφέρομαι για λήψεις με drone. Μπορούμε να συζητήσουμε ένα project;",
+            ariaLabel: "Ρωτήστε για λήψεις με drone στο WhatsApp",
+          },
         },
         {
           label: "Μοντάζ",
@@ -325,6 +377,13 @@ export const siteContent: Record<Language, SiteContent> = {
             "Καθαρά, προσεγμένα μοντάζ που μετατρέπουν το ακατέργαστο υλικό σε ξεκάθαρες ιστορίες για ιστοσελίδες, σύντομα βίντεο, καταχωρίσεις και καμπάνιες.",
           details:
             "Σύντομα βίντεο, στιγμιότυπα έργων, υπότιτλοι, ρυθμός, μορφές παράδοσης",
+          whatsapp: {
+            service: "video-editing",
+            label: "Ρωτήστε για επεξεργασία βίντεο",
+            message:
+              "Γεια σας Altus Luna, ενδιαφέρομαι για επεξεργασία βίντεο. Μπορούμε να συζητήσουμε ένα project;",
+            ariaLabel: "Ρωτήστε για επεξεργασία βίντεο στο WhatsApp",
+          },
         },
         {
           label: "Ιστός",
@@ -333,6 +392,13 @@ export const siteContent: Record<Language, SiteContent> = {
             "Φωτεινές, μοντέρνες ιστοσελίδες για τοπικές επιχειρήσεις, ομάδες ακινήτων, επιχειρήσεις υπηρεσιών και εταιρείες με προσωπική παρουσία ιδιοκτήτη.",
           details:
             "Δομή σελίδων, κατεύθυνση κειμένου, προσαρμοστικός σχεδιασμός, κατασκευή έτοιμη για δημοσίευση",
+          whatsapp: {
+            service: "website-project",
+            label: "Συζητήστε για την ιστοσελίδα σας",
+            message:
+              "Γεια σας Altus Luna, ενδιαφέρομαι για δημιουργία ιστοσελίδας. Μπορούμε να συζητήσουμε τι χρειάζομαι;",
+            ariaLabel: "Συζητήστε για την ιστοσελίδα σας στο WhatsApp",
+          },
         },
         {
           label: "Δίκτυα",
@@ -341,6 +407,13 @@ export const siteContent: Record<Language, SiteContent> = {
             "Πρακτικό οπτικό περιεχόμενο για επιχειρήσεις που θέλουν να παραμένουν ορατές χωρίς να δημοσιεύουν απλώς για να δημοσιεύουν.",
           details:
             "Σύντομα βίντεο, ιδέες για δημοσιεύσεις, απλός ρυθμός περιεχομένου, υλικό έτοιμο για κάθε πλατφόρμα",
+          whatsapp: {
+            service: "social-content",
+            label: "Σχεδιάστε περιεχόμενο για social media",
+            message:
+              "Γεια σας Altus Luna, ενδιαφέρομαι για περιεχόμενο social media. Μπορούμε να συζητήσουμε ένα πακέτο περιεχομένου;",
+            ariaLabel: "Σχεδιάστε περιεχόμενο για social media στο WhatsApp",
+          },
         },
       ],
     },
@@ -399,6 +472,12 @@ export const siteContent: Record<Language, SiteContent> = {
       description:
         "Μοιραστείτε τι χρειάζεστε να τραβηχτεί, να μονταριστεί, να σχεδιαστεί ή να δημοσιευτεί. Η Altus Luna μπορεί να μετατρέψει τη δουλειά που ήδη κάνετε σε καθαρό οπτικό υλικό και πιο δυνατή παρουσία στο διαδίκτυο.",
       button: "Ξεκινήστε τη φόρμα έργου",
+      whatsapp: {
+        label: "Μιλήστε στο WhatsApp",
+        message:
+          "Γεια σας Altus Luna, θα ήθελα να συζητήσουμε ένα project. Μπορούμε να μιλήσουμε στο WhatsApp;",
+        ariaLabel: "Μιλήστε στο WhatsApp για ένα project",
+      },
     },
     footer: {
       description:

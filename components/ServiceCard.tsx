@@ -6,6 +6,12 @@ type ServiceCardProps = {
   description: string;
   details: string;
   label: string;
+  whatsapp: {
+    service: string;
+    label: string;
+    message: string;
+    ariaLabel: string;
+  },
 };
 
 const iconPaths = [
@@ -22,43 +28,16 @@ const accentGlows = [
   "from-[#b6accd]/22 via-[#7787a0]/12",
 ];
 
-const whatsappCtas = [
-  {
-    service: "drone-filming",
-    text: "Ask about drone filming",
-    message:
-      "Hi Altus Luna, I’m interested in drone filming. Can we discuss a project?",
-  },
-  {
-    service: "video-editing",
-    text: "Ask about video editing",
-    message:
-      "Hi Altus Luna, I’m interested in video editing. Can we discuss a project?",
-  },
-  {
-    service: "website-project",
-    text: "Discuss a website project",
-    message:
-      "Hi Altus Luna, I’m interested in a website project. Can we discuss what I need?",
-  },
-  {
-    service: "social-content",
-    text: "Plan social content",
-    message:
-      "Hi Altus Luna, I’m interested in social media content. Can we discuss a content package?",
-  },
-];
-
 export function ServiceCard({
   index,
   title,
   description,
   details,
   label,
+  whatsapp,
 }: ServiceCardProps) {
   const iconPath = iconPaths[index % iconPaths.length];
   const accentGlow = accentGlows[index % accentGlows.length];
-  const whatsappCta = whatsappCtas[index];
 
   return (
     <article className="glass-hover-sweep group relative flex h-full min-h-[25rem] flex-col justify-between overflow-hidden rounded-[1.35rem] border border-transparent bg-[linear-gradient(145deg,rgba(34,42,42,0.78),rgba(9,14,14,0.9))_padding-box,linear-gradient(135deg,rgba(244,241,234,0.46),rgba(145,168,191,0.34),rgba(112,94,153,0.14),rgba(244,241,234,0.08))_border-box] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.24)] backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_34px_100px_rgba(0,0,0,0.42)]">
@@ -97,37 +76,35 @@ export function ServiceCard({
         <p className="text-sm font-medium leading-6 text-[#d8d2c4]">
           {details}
         </p>
-        {whatsappCta ? (
-          <a
-            href={getWhatsAppHref(whatsappCta.message)}
-            target="_blank"
-            rel="noreferrer noopener"
-            aria-label={`${whatsappCta.text} on WhatsApp`}
-            data-service={whatsappCta.service}
-            data-cta="whatsapp"
-            className="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/16 bg-[linear-gradient(135deg,rgba(255,255,255,0.14),rgba(255,255,255,0.055))] px-4 py-3 text-center text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.09),0_16px_42px_rgba(0,0,0,0.22)] backdrop-blur transition-all hover:-translate-y-0.5 hover:border-[#d8d2c4]/36 hover:bg-white/[0.14] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_20px_52px_rgba(145,168,191,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d8d2c4]"
+        <a
+          href={getWhatsAppHref(whatsapp.message)}
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label={whatsapp.ariaLabel}
+          data-service={whatsapp.service}
+          data-cta="whatsapp"
+          className="mt-5 inline-flex min-h-12 w-full items-center justify-center gap-2 rounded-full border border-white/16 bg-[linear-gradient(135deg,rgba(255,255,255,0.14),rgba(255,255,255,0.055))] px-4 py-3 text-center text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.09),0_16px_42px_rgba(0,0,0,0.22)] backdrop-blur transition-all hover:-translate-y-0.5 hover:border-[#d8d2c4]/36 hover:bg-white/[0.14] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_20px_52px_rgba(145,168,191,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d8d2c4]"
+        >
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            className="h-4 w-4 shrink-0 fill-none stroke-current"
           >
-            <svg
-              aria-hidden="true"
-              viewBox="0 0 24 24"
-              className="h-4 w-4 shrink-0 fill-none stroke-current"
-            >
-              <path
-                d="M6.2 18.2 4.5 20l.5-3.2A7.4 7.4 0 1 1 7.6 19a7.6 7.6 0 0 1-1.4-.8Z"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9 9.4c.4 2.1 1.6 3.7 3.8 4.7l1.1-1.1 2 .7v1.4c0 .5-.4.9-.9.9A7.2 7.2 0 0 1 8 9c0-.5.4-.9.9-.9h1.4l.7 2-1 1.1Z"
-                strokeWidth="1.35"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <span>{whatsappCta.text}</span>
-          </a>
-        ) : null}
+            <path
+              d="M6.2 18.2 4.5 20l.5-3.2A7.4 7.4 0 1 1 7.6 19a7.6 7.6 0 0 1-1.4-.8Z"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M9 9.4c.4 2.1 1.6 3.7 3.8 4.7l1.1-1.1 2 .7v1.4c0 .5-.4.9-.9.9A7.2 7.2 0 0 1 8 9c0-.5.4-.9.9-.9h1.4l.7 2-1 1.1Z"
+              strokeWidth="1.35"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+          <span>{whatsapp.label}</span>
+        </a>
       </div>
     </article>
   );

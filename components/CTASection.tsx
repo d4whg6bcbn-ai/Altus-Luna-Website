@@ -7,9 +7,6 @@ type CTASectionProps = {
   content: SiteContent;
 };
 
-const contactWhatsAppMessage =
-  "Hi Altus Luna, I’d like to discuss a project. Can we talk on WhatsApp?";
-
 export function CTASection({ content }: CTASectionProps) {
   return (
     <section
@@ -48,10 +45,10 @@ export function CTASection({ content }: CTASectionProps) {
               {content.cta.button}
             </Link>
             <a
-              href={getWhatsAppHref(contactWhatsAppMessage)}
+              href={getWhatsAppHref(content.cta.whatsapp.message)}
               target="_blank"
               rel="noreferrer noopener"
-              aria-label="Chat on WhatsApp about a project"
+              aria-label={content.cta.whatsapp.ariaLabel}
               data-location="contact"
               data-cta="whatsapp"
               className="glass-hover-sweep inline-flex w-full items-center justify-center gap-2 overflow-hidden rounded-full border border-white/16 bg-[linear-gradient(135deg,rgba(255,255,255,0.14),rgba(255,255,255,0.055))] px-6 py-4 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.09),0_16px_42px_rgba(0,0,0,0.18)] backdrop-blur transition-all hover:-translate-y-0.5 hover:border-[#d8d2c4]/36 hover:bg-white/[0.14] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.12),0_20px_52px_rgba(145,168,191,0.16)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#d8d2c4] sm:w-auto"
@@ -74,7 +71,7 @@ export function CTASection({ content }: CTASectionProps) {
                   strokeLinejoin="round"
                 />
               </svg>
-              <span>Chat on WhatsApp</span>
+              <span>{content.cta.whatsapp.label}</span>
             </a>
           </div>
           <div className="relative mt-7 grid gap-3 text-sm text-[#f4f1ea]">
